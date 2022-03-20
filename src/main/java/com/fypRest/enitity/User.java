@@ -4,15 +4,95 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Entity
-@Table(name="user")
+@Table(name="user1")
 public class User
 {
-    @javax.persistence.Id
+    @Override
+	public String toString() {
+		return "User [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", email=" + email
+				+ ", user_name=" + user_name + ", password=" + password + ", applicationStatus=" + applicationStatus
+				+ ", role=" + role + ", image=" + Arrays.toString(image) + "]";
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getFirst_name() {
+		return first_name;
+	}
+
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
+	}
+
+	public String getLast_name() {
+		return last_name;
+	}
+
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getUser_name() {
+		return user_name;
+	}
+
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getApplicationStatus() {
+		return applicationStatus;
+	}
+
+	public void setApplicationStatus(String applicationStatus) {
+		this.applicationStatus = applicationStatus;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public Byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(Byte[] image) {
+		this.image = image;
+	}
+
+	@javax.persistence.Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="id1")
     private int id;
 
     @Column(name="first_name")
@@ -53,107 +133,5 @@ public class User
         this.role = role;
     }
 
-    public int getId()
-    {
-        return id;
-    }
-
-    public void setId(int id)
-    {
-        this.id = id;
-    }
-
-    public String getFirst_name()
-    {
-        return first_name;
-    }
-
-    public void setFirst_name(String first_name)
-    {
-        this.first_name = first_name;
-    }
-
-    public String getLast_name()
-    {
-        return last_name;
-    }
-
-    public void setLast_name(String last_name)
-    {
-        this.last_name = last_name;
-    }
-
-    public String getEmail()
-    {
-        return email;
-    }
-
-    public void setEmail(String email)
-    {
-        this.email = email;
-    }
-
-    public String getUser_name()
-    {
-        return user_name;
-    }
-
-    public void setUser_name(String user_name)
-    {
-        this.user_name = user_name;
-    }
-
-    public String getPassword()
-    {
-        return password;
-    }
-
-    public void setPassword(String password)
-    {
-        this.password = password;
-    }
-
-    public String getRole()
-    {
-        return role;
-    }
-
-    public void setRole(String role)
-    {
-        this.role = role;
-    }
-
-    public String getApplicationStatus()
-    {
-        return applicationStatus;
-    }
-
-    public void setApplicationStatus(String applicationStatus)
-    {
-        this.applicationStatus = applicationStatus;
-    }
-
-    public Byte[] getImage()
-    {
-        return image;
-    }
-
-    public void setImage(Byte[] image)
-    {
-        this.image = image;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "User{" +
-                "id=" + id +
-                ", first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
-                ", email='" + email + '\'' +
-                ", username='" + user_name + '\'' +
-                ", password='" + password + '\'' +
-                ", role='" + role + '\'' +
-                '}';
-    }
+    
 }

@@ -54,7 +54,7 @@ public class DonnerController
         System.out.println(theDonner);
         User u = theDonner.getUser();
         System.out.println(u);
-        MailRequest request = new MailRequest("Charity App", u.getEmail(), "charity.application501@gmail.com", "Confirmation Email");
+        MailRequest request = new MailRequest("Charity App", u.getEmail(), "vitulchauhan2020@gmail.com", "Confirmation Email");
         Map<String, Object> model = new HashMap<>();
         model.put("Name", request.getName());
         model.put("location", "Islamabad, Pakistan");
